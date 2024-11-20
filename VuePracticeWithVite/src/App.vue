@@ -1,30 +1,41 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <p>
+    {{counter}}
+    </p>
+    <p>
+    {{message}}
+    </p>
+    <button @click="increment">click!</button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+import { ref } from 'vue' // script태그 안에 import, export문을 작성한다.
+
+export default { 
+  setup() { // 
+    const counter = ref(0);
+    const message = ref('Hello World!');
+    const increment = () => {counter.value++};
+
+    // this 키워드를 사용할수 없다. 값을 setup에 직접 노출시킬것.
+    return {
+      counter,
+      message,
+      increment, 
+    }
+  },
+  // Vue3은 Composition api를 주력으로 사용.
+  // vue3에서 사용하는 메소드 setup() 내 counter, message, increment는 this를 통해 접근할 수 없음.
+  // 왜냐면 this는 Options api에서 사용하는 방식이기 때문.
+  // 템플릿이나 다른 라이프사이클을 통해서 setup()값에 접근해야 한다.
+  //mounted() { // option api에서 사용함
+    //console.log(this.count)
+    //console.log(counter.value); // this키워드가 아닌 값.value를 통해 접근하도록
+  //}
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
+
+
+
