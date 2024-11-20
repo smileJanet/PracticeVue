@@ -39,6 +39,7 @@
     import {ref} from 'vue';
 
     export default{
+        // return문은 반드시 setup 안에 있어야 한다. 
         setup(){
             const message = ref ('Hello, Janet!');
             const rawHtml = ref('<h4 style="color:royalblue;">안녕하세요</h4>');
@@ -48,7 +49,7 @@
                 type:'text',
                 value:'123456',
                 disabled: false,
-            });
+            });// setup()
 
             return{
                 message,
@@ -56,7 +57,7 @@
                 dynamicTitle,
                 isDisabled,
                 attrs,
-            };
+            }; // return
         },
     };
 </script>

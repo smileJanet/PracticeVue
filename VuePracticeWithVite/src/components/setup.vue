@@ -14,7 +14,8 @@
   import { ref } from 'vue' // script태그 안에 import, export문을 작성한다.
   
   export default { 
-    setup() { // 
+    setup() { // 객체, 메소드 등을 선언하는 공간.
+      // return문은 반드시 setup()안에 있어야 한다.
       const counter = ref(0);
       const message = ref('Hello World!');
       const increment = () => {counter.value++};
