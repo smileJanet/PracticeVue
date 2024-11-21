@@ -28,7 +28,7 @@
         <h4> 객체 출력(key:value) </h4>
         <ol>
         <li style="padding:5px;" v-for="(value, key, index) in myObject" :key="key">
-            {{ index }} , {{ key }} : {{ value }}
+        {{ index }} , {{ key }} : {{ value }}
         </li>
         </ol>
 
