@@ -1,27 +1,16 @@
 <template>
-    <div>
-        <hr>
-        <h3> 제목 </h3>
-        <h4> 부연 설명 </h4>
-        <p></p>
-    </div>
+    <h4> Title </h4>
+    <h3> decription </h3>
 </template>
 
 <script>
-
-import { } from 'vue'
+import {  } from 'vue';
 
 export default {
-    setup(){
 
-
-    return {
-        
-    };
-    } // setup
-
-} // export
+}
 </script>
 
 <style>
+
 </style>
