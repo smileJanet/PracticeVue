@@ -8,28 +8,27 @@
     <!-- <unwrapping /> -->
     <!-- <destruct /> -->
     <!-- <readonly /> -->
-
-    <!-- component area -->
-
-
-
-
+    <!-- <computed /> -->
+    <!-- <binding /> -->
+    <!-- <condition /> -->
+    <loop />
 
   </div>
 </template>
 
 <script setup>
-
-// reactivity practice
-import Setup from './reactivity-components/setup.vue'
-import Template from './reactivity-components/template.vue'
-import reactive from './reactivity-components/Reactivity_reactive.vue'
-import ref from './reactivity-components/Reactivity_ref.vue'
-import unwrapping from './reactivity-components/unwrapping.vue'
-import destruct from './reactivity-components/destruct.vue'
-import readonly from './reactivity-components/readonly.vue'
-
-
+// composition api
+import Setup from './components/setup.vue'
+import Template from './components/template.vue'
+import reactive from './components/Reactivity_reactive.vue'
+import ref from './components/Reactivity_ref.vue'
+import unwrapping from './components/unwrapping.vue'
+import destruct from './components/destruct.vue'
+import readonly from './components/readonly.vue'
+import computed from './components/computed.vue'
+import binding from './components/binding.vue'
+import condition from './components/condition.vue'
+import loop from './components/loop.vue'
 
 
 </script>
