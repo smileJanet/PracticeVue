@@ -4,6 +4,7 @@
     너무 많이 사용하면 유지보수가 어려워질 수 있다.
 
     이럴때 계산된 속성(computed property)를 사용할 수 있다.
+    계산된 속성(Computed property) : 텍스트 보간법{{}}의 "객체화"된 형태
 -->
 
 <template>

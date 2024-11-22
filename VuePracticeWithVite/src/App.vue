@@ -11,7 +11,9 @@
     <!-- <computed /> -->
     <!-- <binding /> -->
     <!-- <condition /> -->
-    <loop />
+    <!-- <loop /> -->
+    <!-- <vmodel />  -->
+    <watch />
 
   </div>
 </template>
@@ -29,6 +31,8 @@ import computed from './components/computed.vue'
 import binding from './components/binding.vue'
 import condition from './components/condition.vue'
 import loop from './components/loop.vue'
+import vmodel from './components/vmodel.vue'
+import watch from './components/watch.vue'
 
 
 </script>
