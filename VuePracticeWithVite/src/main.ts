@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import App from './App.vue'
+import AppSecond from './AppSecond.vue'
 
 
-createApp(App).mount('#app')
+createApp(AppSecond).mount('#app')

@@ -13,16 +13,16 @@
     <!-- <condition /> -->
     <!-- <loop /> -->
     <!-- <vmodel />  -->
-    <watch />
+    <!-- <watch /> -->
 
   </div>
 </template>
 
-<script setup>
+<script setup> // == <script> setup(){} </script> -> composition api 방식
 // composition api
 import Setup from './components/setup.vue'
 import Template from './components/template.vue'
-import reactive from './components/Reactivity_reactive.vue'
+import Reactive from './components/Reactivity_reactive.vue'
 import ref from './components/Reactivity_ref.vue'
 import unwrapping from './components/unwrapping.vue'
 import destruct from './components/destruct.vue'
@@ -33,6 +33,5 @@ import condition from './components/condition.vue'
 import loop from './components/loop.vue'
 import vmodel from './components/vmodel.vue'
 import watch from './components/watch.vue'
-
 
 </script>
