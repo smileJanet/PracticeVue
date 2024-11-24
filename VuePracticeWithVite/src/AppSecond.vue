@@ -51,6 +51,8 @@
         @click="sayHello"
         class="my-button"
         id="my-button"
+        label="Name"
+        data-id="this is ID"
     />
     <!-- 그런데 class와 id는 상속하고 싶을 때? -->
     <!-- 내장 객체 attribute를 사용한다 -->
