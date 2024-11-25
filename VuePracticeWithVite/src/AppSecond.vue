@@ -90,7 +90,30 @@
     <Username v-model:familyname="familyname" v-model:givenname="givenname"/>
 
     <hr />
-    <FancyButton> Click! </FancyButton>
+    <!-- <FancyButton> Click! <span>😄</span></FancyButton> -->
+
+    <FancyButton>
+        <!-- slot에 값을 보내기 위해선 v-slot을 사용해도 되고... -->
+        <!-- <template v-slot:header>Header</template>
+        <template v-slot:body>Contexts</template>
+        <template v-slot:footer>Footer</template> -->
+
+        <!-- slot도 단축키가 있다(#). -->
+        <template #header>Header</template>
+        <!-- 값이 넘어올 때 obj형식으로 넘어온다. -->
+        <template #default="slotProps"> {{ slotProps.childMessage }} </template>
+        <template #footer>Footer</template>
+
+        <!-- Render slot -->
+        <!-- 상위컴포넌트에서 slot의 값에 접근하는 것은 가능하지만 -->
+        <!-- 하위 컴포넌트에서 값을 바꿀 수 없다. -->
+
+        <!-- scoped slots -->
+        <!-- 하위 -> 상위로 값을 전달하는 방법 -->
+        <!-- props로 값을 전달하는 것 처럼 속성을 슬롯 콘텐츠에 전달할 수 있다. -->
+
+
+    </FancyButton>
 
 </div>
 </div>
@@ -111,10 +134,10 @@ import NonProps from './advancedComponents/NonProps.vue'
 import Event from './advancedComponents/Event.vue'
 import EventComputed from './advancedComponents/EventComputed.vue'
 import Username from './advancedComponents/Username.vue'
-import FancyButton from './advancedComponents/Slot.vue'
+import FancyButton from './advancedComponents/slot.vue'
 
 
-import {reactive, ref} from  'vue'
+import {reactive, ref, } from  'vue'
 
 export default {
 
@@ -162,6 +185,8 @@ export default {
     const familyname = ref('');
     const givenname = ref('');
 
+    const slotArgs = ref('제목');
+
     return {
         post,
         posts,
@@ -171,6 +196,7 @@ export default {
         title,
         familyname,
         givenname,
+        slotArgs,
 
         };
     }
