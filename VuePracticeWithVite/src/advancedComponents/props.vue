@@ -38,7 +38,7 @@ export default {
     },
     contents : {
       type:  String,
-      required : true,
+      // required : true,
     },
     isLike : { // 자식컴포넌트에선 isLike로 선언되었지만 부모컴포넌트의 template에선 is-like로 사용될 수 있다.
       type : Boolean,

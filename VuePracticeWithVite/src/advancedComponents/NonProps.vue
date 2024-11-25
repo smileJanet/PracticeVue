@@ -33,10 +33,10 @@ export default {
 
     setup(props, context){
       context.attrs
-      console.log(context.attrs);
-      console.log(context.attrs.class);
-      console.log(context.attrs.id);
-      console.log(context.attrs.onClick);
+      //console.log(context.attrs);
+      //console.log(context.attrs.class);
+      //console.log(context.attrs.id);
+      //console.log(context.attrs.onClick);
       const value = computed({
         get(){
           return props.modelValue;

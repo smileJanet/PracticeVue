@@ -19,7 +19,12 @@
     <!-- Vue에선 컴포넌트에서 선언할 땐 PascalCase, templete안에서 쓸 땐 kebab-case로 작성한다(앞 강의 참조) -->
     <!-- Props컴포넌트에선 isLike로 선언했지만, 부모 컴포넌트(AppSecond)에서 사용될 땐 is-like로 작성해도 문제 없다 -->
     
-    <!-- <Props :title='post.title' :contents='post.contents' :type='post.type' :is-like='post.isLike' @toggle-like="post.isLike = !post.isLike" /> -->
+    <!-- <Props 
+    :title='post.title' 
+    :contents='post.contents' 
+    :type='post.type' 
+    :is-like='post.isLike' 
+    @toggle-like="post.isLike = !post.isLike" /> -->
 
     </div>
 
@@ -56,11 +61,39 @@
     />
     <!-- 그런데 class와 id는 상속하고 싶을 때? -->
     <!-- 내장 객체 attribute를 사용한다 -->
+
+    <hr />
+    <!-- @실행할 이벤트명 = "실행될 메소드" -->
+    <!-- 자식 컴포넌트에서 create-post 이벤트가 실행될 때, createPost라는 메소드를 실행시킨다. -->
+    <!-- 헷갈리니까 createPost -> methodPost로 바꾸겠음 -->
+    <Event @create-post="methodPost" /> 
+
+    <hr class="my-4" />
+    <!-- Vue3에서의 사용자 정의 컴포넌트 -->
+    <!-- Props : modelValue로 값을 넘긴다. -->
+    <!-- Event : update:modelValue로 값을 넘긴다. -->
+    
+    <!-- <EventComputed 
+    :model-vale="username" 
+    @update:model-value="value => {username = value}" /> -->
+    <!-- modelVue의 이름을 바꾸고 싶을 때 : v-model:바꿀이름 -->
+    <!-- <EventComputed
+    v-model="username"
+    label="name"
+    /> -->
+
+    <!-- <EventComputed
+    v-model:title="title"
+    label="제목"
+    /> -->
+
+    <Username v-model:familyname="familyname" v-model:givenname="givenname"/>
+
 </div>
 </div>
 </template>
 
-<script> 
+<script>    
 // options api방식
 // advanced - components 
 // 에러가 너무 많아서 셋팅이 오래 걸렸다.
@@ -70,16 +103,23 @@
 // script setup  composition api방식, setup(){}이 겸용된 상태. import만 하면 컴포넌트 사용 가능
 // 지금 파일과 같은 script 내 components :{} 방식 : options api 방식, import + components{}객체에 명시해야 함. 좀 더 복잡하고 어려움. 
 
-
 import Props from './advancedComponents/props.vue'
 import NonProps from './advancedComponents/NonProps.vue'
-import {reactive} from  'vue'
+import Event from './advancedComponents/Event.vue'
+import EventComputed from './advancedComponents/EventComputed.vue'
+import Username from './advancedComponents/Username.vue'
+
+import {reactive, ref} from  'vue'
 
 export default {
 
     components:{ 
         Props,
         NonProps,
+        Event,
+        EventComputed,
+        Username,
+
     },
 
     setup(){
@@ -99,10 +139,32 @@ export default {
         alert('안녕하세요!');
     }
 
+    // 자식컴포넌트에서 이벤트 실행시 부모 컴포넌트에서 실행될 메소드 정리
+    // ✨ 자식 컴포넌트에서 선언된 이벤트(createPost)에 대한 메소드(methodPost) 선언
+    const methodPost = newPost =>{
+        console.log('type :', newPost.type);
+        console.log('title :', newPost.title);
+        console.log('contents:', newPost.contents);
+        console.log(newPost);
+        console.log(posts);
+        posts.push(newPost);
+    }
+
+    const username = ref(''); 
+    const title = ref(''); 
+
+    const familyname = ref('');
+    const givenname = ref('');
+
     return {
         post,
         posts,
         sayHello,
+        methodPost,
+        username,
+        title,
+        familyname,
+        givenname,
 
         };
     }
