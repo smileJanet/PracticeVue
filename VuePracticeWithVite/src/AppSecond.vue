@@ -89,6 +89,9 @@
 
     <Username v-model:familyname="familyname" v-model:givenname="givenname"/>
 
+    <hr />
+    <FancyButton> Click! </FancyButton>
+
 </div>
 </div>
 </template>
@@ -108,6 +111,8 @@ import NonProps from './advancedComponents/NonProps.vue'
 import Event from './advancedComponents/Event.vue'
 import EventComputed from './advancedComponents/EventComputed.vue'
 import Username from './advancedComponents/Username.vue'
+import FancyButton from './advancedComponents/Slot.vue'
+
 
 import {reactive, ref} from  'vue'
 
@@ -119,6 +124,7 @@ export default {
         Event,
         EventComputed,
         Username,
+        FancyButton,
 
     },
 
