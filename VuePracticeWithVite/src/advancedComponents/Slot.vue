@@ -19,6 +19,10 @@
 			<slot name="footer">#footer</slot>
 		</div>
 	</div>
+
+	
+		<!-- Slot또한 여러 값을 한번에 Props처럼 전달할 수 있지만, -->
+		<!-- Props는 부모가 자식에게 전달, Slot은 자식이 부모에게 전달 -->
 </template>
 
 <script>

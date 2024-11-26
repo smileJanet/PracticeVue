@@ -19,6 +19,7 @@
     <!-- Vue에선 컴포넌트에서 선언할 땐 PascalCase, templete안에서 쓸 땐 kebab-case로 작성한다(앞 강의 참조) -->
     <!-- Props컴포넌트에선 isLike로 선언했지만, 부모 컴포넌트(AppSecond)에서 사용될 땐 is-like로 작성해도 문제 없다 -->
     
+    <!-- 부모 → 자식으로 여러가지 값을 전달하는 방법.. -->
     <!-- <Props 
     :title='post.title' 
     :contents='post.contents' 
